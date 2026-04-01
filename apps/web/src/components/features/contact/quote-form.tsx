@@ -3,7 +3,12 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Button, Input } from '@hv/ui';
-import { Send, CheckCircle } from 'lucide-react';
+import { Send, CheckCircle, AlertCircle } from 'lucide-react';
+
+const MAX_FIELD_LENGTH = 200;
+const MAX_MESSAGE_LENGTH = 2000;
+const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+const PHONE_REGEX = /^[\d\s()+-]{7,20}$/;
 
 interface FormValues {
   firstName: string;
@@ -19,17 +24,24 @@ interface FormValues {
 
 export function QuoteForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
+    reset,
   } = useForm<FormValues>();
 
-  const onSubmit = async (data: FormValues) => {
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    console.log('Form submitted:', data);
-    setSubmitted(true);
+  const onSubmit = async (_data: FormValues) => {
+    setSubmitError(false);
+    try {
+      // Simulate API call — replace with actual endpoint
+      await new Promise((resolve) => setTimeout(resolve, 1500));
+      setSubmitted(true);
+      reset();
+    } catch {
+      setSubmitError(true);
+    }
   };
 
   if (submitted) {
@@ -53,19 +65,34 @@ export function QuoteForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="mt-6 space-y-6">
+    <form onSubmit={handleSubmit(onSubmit)} className="mt-6 space-y-6" noValidate>
+      {submitError && (
+        <div className="flex items-center gap-3 rounded-lg bg-error/10 p-4">
+          <AlertCircle className="h-5 w-5 shrink-0 text-error" />
+          <p className="font-body text-sm text-error">
+            Something went wrong. Please try again or call us directly.
+          </p>
+        </div>
+      )}
+
       {/* Name Row */}
       <div className="grid gap-6 sm:grid-cols-2">
         <Input
           label="First Name"
           placeholder="John"
-          {...register('firstName', { required: 'First name is required' })}
+          {...register('firstName', {
+            required: 'First name is required',
+            maxLength: { value: MAX_FIELD_LENGTH, message: `Max ${MAX_FIELD_LENGTH} characters` },
+          })}
           error={errors.firstName?.message}
         />
         <Input
           label="Last Name"
           placeholder="Smith"
-          {...register('lastName', { required: 'Last name is required' })}
+          {...register('lastName', {
+            required: 'Last name is required',
+            maxLength: { value: MAX_FIELD_LENGTH, message: `Max ${MAX_FIELD_LENGTH} characters` },
+          })}
           error={errors.lastName?.message}
         />
       </div>
@@ -78,7 +105,8 @@ export function QuoteForm() {
           placeholder="john@example.com"
           {...register('email', {
             required: 'Email is required',
-            pattern: { value: /^\S+@\S+$/i, message: 'Invalid email' },
+            pattern: { value: EMAIL_REGEX, message: 'Please enter a valid email address' },
+            maxLength: { value: MAX_FIELD_LENGTH, message: `Max ${MAX_FIELD_LENGTH} characters` },
           })}
           error={errors.email?.message}
         />
@@ -86,7 +114,10 @@ export function QuoteForm() {
           label="Phone"
           type="tel"
           placeholder="(555) 000-0000"
-          {...register('phone', { required: 'Phone number is required' })}
+          {...register('phone', {
+            required: 'Phone number is required',
+            pattern: { value: PHONE_REGEX, message: 'Please enter a valid phone number' },
+          })}
           error={errors.phone?.message}
         />
       </div>
@@ -96,13 +127,19 @@ export function QuoteForm() {
         <Input
           label="Street Address"
           placeholder="123 Main St"
-          {...register('address', { required: 'Address is required' })}
+          {...register('address', {
+            required: 'Address is required',
+            maxLength: { value: MAX_FIELD_LENGTH, message: `Max ${MAX_FIELD_LENGTH} characters` },
+          })}
           error={errors.address?.message}
         />
         <Input
           label="City"
           placeholder="Toronto"
-          {...register('city', { required: 'City is required' })}
+          {...register('city', {
+            required: 'City is required',
+            maxLength: { value: MAX_FIELD_LENGTH, message: `Max ${MAX_FIELD_LENGTH} characters` },
+          })}
           error={errors.city?.message}
         />
       </div>
@@ -156,11 +193,16 @@ export function QuoteForm() {
           Project Details
         </label>
         <textarea
-          {...register('message')}
+          {...register('message', {
+            maxLength: { value: MAX_MESSAGE_LENGTH, message: `Max ${MAX_MESSAGE_LENGTH} characters` },
+          })}
           rows={4}
           placeholder="Tell us about your project — dimensions, terrain, any special requirements..."
           className="w-full resize-none rounded-none border-0 border-b-2 border-outline-variant/40 bg-surface-container-lowest px-0 pb-2 pt-2 font-body text-base text-on-surface outline-none transition-colors placeholder:text-outline focus:border-primary"
         />
+        {errors.message && (
+          <p className="font-body text-xs text-error">{errors.message.message}</p>
+        )}
       </div>
 
       {/* Submit */}
