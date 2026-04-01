@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const basePath = 'd:/H-V-enterprise-ltd-client-work/apps/web/public/images';
+const basePath = path.join(__dirname, '..', 'apps', 'web', 'public', 'images');
 
 function createSvg(text, bgColor, textColor) {
   bgColor = bgColor || '#D3D1CC';
