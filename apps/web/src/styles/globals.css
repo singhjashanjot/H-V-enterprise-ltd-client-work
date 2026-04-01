@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Base Layer ───────────────────────────────────────── */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    @apply border-outline-variant/20;
+  }
+
+  html {
+    @apply scroll-smooth antialiased;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background font-body text-on-surface;
+  }
+
+  /* Heading defaults — Bricolage Grotesque */
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display text-on-surface;
+    text-wrap: balance;
+  }
+
+  h1 {
+    @apply text-headline-lg;
+  }
+
+  h2 {
+    @apply text-headline-md;
+  }
+
+  h3 {
+    @apply text-title-lg;
+  }
+
+  p {
+    @apply text-body-lg text-on-surface-variant;
+    text-wrap: pretty;
+  }
+
+  /* Selection color */
+  ::selection {
+    @apply bg-primary-fixed text-primary;
+  }
+
+  /* Focus visible — accessibility */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary;
+  }
+}
+
+/* ─── Components Layer ─────────────────────────────────── */
+@layer components {
+  /* Label utility — uppercase tracking for "blueprinted" look */
+  .label {
+    @apply font-body text-label-md uppercase tracking-[0.06em];
+  }
+
+  .label-sm {
+    @apply font-body text-label-sm uppercase tracking-[0.06em];
+  }
+
+  /* Glassmorphic surface */
+  .glass {
+    @apply bg-surface/80 backdrop-blur-xl;
+  }
+
+  /* Section divider using tonal shift instead of borders */
+  .section-break {
+    @apply border-none bg-transparent py-0;
+  }
+}
+
+/* ─── Utilities Layer ──────────────────────────────────── */
+@layer utilities {
+  /* Scroll-triggered animation delay utilities */
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+
+  /* Ghost border — 20% opacity outline-variant */
+  .ghost-border {
+    @apply border border-outline-variant/20;
+  }
+}
