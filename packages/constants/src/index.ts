@@ -16,3 +16,7 @@ export {
   galleryProjects,
   materials,
 } from './data';
+export {
+  serviceDetailsRecord,
+  type ServiceDetail,
+} from './service-details';
