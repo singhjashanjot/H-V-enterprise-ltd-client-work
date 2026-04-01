@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import { X, MapPin } from 'lucide-react';
 import { galleryProjects } from '@hv/constants';
@@ -12,6 +12,25 @@ const categories = ['All', ...new Set(galleryProjects.map((p) => p.category))];
 export function GalleryGrid() {
   const [activeFilter, setActiveFilter] = useState('All');
   const [lightbox, setLightbox] = useState<string | null>(null);
+
+  const closeLightbox = useCallback(() => setLightbox(null), []);
+
+  // Keyboard escape + body scroll lock
+  useEffect(() => {
+    if (!lightbox) return;
+
+    document.body.style.overflow = 'hidden';
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') closeLightbox();
+    };
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [lightbox, closeLightbox]);
 
   const filtered =
     activeFilter === 'All'
@@ -80,10 +99,13 @@ export function GalleryGrid() {
           return (
             <div
               className="fixed inset-0 z-[100] flex items-center justify-center bg-on-background/90 p-4 backdrop-blur-sm"
-              onClick={() => setLightbox(null)}
+              onClick={closeLightbox}
+              role="dialog"
+              aria-modal="true"
+              aria-label={`${project.title} full view`}
             >
               <button
-                onClick={() => setLightbox(null)}
+                onClick={closeLightbox}
                 className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-surface/10 text-surface transition-colors hover:bg-surface/20"
                 aria-label="Close lightbox"
               >
