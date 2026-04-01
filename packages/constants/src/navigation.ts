@@ -7,7 +7,7 @@ export const mainNavItems: NavItem[] = [
     label: 'Services',
     href: '/services',
     children: [
-      { label: 'Cedar Fencing', href: '/services/cedar-fencing' },
+      { label: 'Cedar Fencing', href: '/services/cedar' },
       { label: 'Vinyl Fencing', href: '/services' },
       { label: 'Metal & Wood Hybrid', href: '/services' },
       { label: 'Aluminum Fencing', href: '/services' },

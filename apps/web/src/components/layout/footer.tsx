@@ -23,27 +23,39 @@ export function Footer() {
             </p>
             {/* Social Icons */}
             <div className="mt-6 flex items-center gap-3">
-              <a
-                href={siteConfig.socialLinks.facebook}
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-surface/10 transition-colors hover:bg-primary-container"
-                aria-label="Facebook"
-              >
-                <Facebook className="h-4 w-4" />
-              </a>
-              <a
-                href={siteConfig.socialLinks.instagram}
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-surface/10 transition-colors hover:bg-primary-container"
-                aria-label="Instagram"
-              >
-                <Instagram className="h-4 w-4" />
-              </a>
-              <a
-                href={siteConfig.socialLinks.linkedin}
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-surface/10 transition-colors hover:bg-primary-container"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="h-4 w-4" />
-              </a>
+              {siteConfig.socialLinks.facebook && siteConfig.socialLinks.facebook !== '#' && (
+                <a
+                  href={siteConfig.socialLinks.facebook}
+                  className="flex h-9 w-9 items-center justify-center rounded-full bg-surface/10 transition-colors hover:bg-primary-container"
+                  aria-label="Facebook"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Facebook className="h-4 w-4" />
+                </a>
+              )}
+              {siteConfig.socialLinks.instagram && siteConfig.socialLinks.instagram !== '#' && (
+                <a
+                  href={siteConfig.socialLinks.instagram}
+                  className="flex h-9 w-9 items-center justify-center rounded-full bg-surface/10 transition-colors hover:bg-primary-container"
+                  aria-label="Instagram"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Instagram className="h-4 w-4" />
+                </a>
+              )}
+              {siteConfig.socialLinks.linkedin && siteConfig.socialLinks.linkedin !== '#' && (
+                <a
+                  href={siteConfig.socialLinks.linkedin}
+                  className="flex h-9 w-9 items-center justify-center rounded-full bg-surface/10 transition-colors hover:bg-primary-container"
+                  aria-label="LinkedIn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Linkedin className="h-4 w-4" />
+                </a>
+              )}
             </div>
           </div>
 
@@ -128,15 +140,17 @@ export function Footer() {
             © {new Date().getFullYear()} H&V Enterprise Ltd. Canadian Craftsmanship Guaranteed.
           </p>
           <div className="flex items-center gap-6">
-            {footerLegalLinks.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="font-body text-xs text-surface/50 transition-colors hover:text-surface/80"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {footerLegalLinks
+              .filter((link) => link.href !== '#')
+              .map((link) => (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className="font-body text-xs text-surface/50 transition-colors hover:text-surface/80"
+                >
+                  {link.label}
+                </Link>
+              ))}
           </div>
         </div>
       </div>
