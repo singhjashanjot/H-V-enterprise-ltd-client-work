@@ -18,40 +18,41 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: 'H&V Enterprise Ltd | Professional Canadian Fencing',
-    template: '%s | H&V Enterprise Ltd',
+    default: 'All Fences | Professional Fencing in BC',
+    template: '%s | All Fences',
   },
   description:
-    'Expert fencing installation in cedar, vinyl, aluminum, chain link, and more. Serving homeowners and businesses across Canada with warranties and craftsmanship you can actually feel.',
+    'Expert fencing installation in cedar, vinyl, aluminum, chain link, and more. Serving homeowners and businesses across the Okanagan, Kamloops, and Lower Mainland with warranties and craftsmanship you can actually feel.',
   keywords: [
     'fencing',
     'cedar fence',
     'vinyl fence',
     'aluminum fence',
     'chain link fence',
-    'Canadian fencing',
+    'Okanagan fencing',
+    'Kamloops fencing',
     'fence installation',
-    'Toronto fencing',
+    'Kelowna fencing',
     'fence contractor',
-    'H&V Enterprise',
+    'All Fences',
   ],
-  authors: [{ name: 'H&V Enterprise Ltd' }],
-  creator: 'H&V Enterprise Ltd',
-  metadataBase: new URL('https://hv-enterprise.ca'),
+  authors: [{ name: 'All Fences' }],
+  creator: 'All Fences',
+  metadataBase: new URL('https://www.allfences.ca'),
   openGraph: {
     type: 'website',
     locale: 'en_CA',
-    url: 'https://hv-enterprise.ca',
-    siteName: 'H&V Enterprise Ltd',
-    title: 'H&V Enterprise Ltd | Professional Canadian Fencing',
+    url: 'https://www.allfences.ca',
+    siteName: 'All Fences',
+    title: 'All Fences | Professional Fencing in BC',
     description:
-      'Expert fencing installation in cedar, vinyl, aluminum, chain link, and more. Serving homeowners and businesses across Canada.',
+      'Expert fencing installation in cedar, vinyl, aluminum, chain link, and more. Serving homeowners and businesses across British Columbia.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'H&V Enterprise Ltd | Professional Canadian Fencing',
+    title: 'All Fences | Professional Fencing in BC',
     description:
-      'Expert fencing installation across Canada with warranties and craftsmanship you can actually feel.',
+      'Expert fencing installation across British Columbia with warranties and craftsmanship you can actually feel.',
   },
   robots: {
     index: true,
