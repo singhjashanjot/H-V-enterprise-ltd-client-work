@@ -9,7 +9,7 @@ import { CtaBanner } from '@/components/features/home/cta-banner';
 
 export const metadata: Metadata = {
   title: 'Gallery',
-  description: 'Browse our real-world installations across Canada, from rugged perimeter security to architectural garden highlights.',
+  description: 'Browse our real-world installations across British Columbia, from rugged perimeter security to architectural garden highlights.',
 };
 
 export default function GalleryPage() {
@@ -24,7 +24,7 @@ export default function GalleryPage() {
               Project Gallery.
             </h1>
             <p className="mt-6 max-w-2xl font-body text-body-lg text-on-surface-variant">
-              Browse our real-world installations across Canada, from rugged perimeter security to architectural garden highlights.
+              Browse our real-world installations across British Columbia, from rugged perimeter security to architectural garden highlights.
             </p>
           </div>
         </section>

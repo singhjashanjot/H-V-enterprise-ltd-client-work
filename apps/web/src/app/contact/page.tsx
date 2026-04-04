@@ -8,7 +8,7 @@ import { AnimateOnScroll } from '@/components/common/animate-on-scroll';
 
 export const metadata: Metadata = {
   title: 'Contact & Free Quote',
-  description: 'Get a free fencing quote from H&V Enterprise Ltd. Contact our experts for professional consultation.',
+  description: 'Get a free fencing quote from All Fences. Contact our experts for professional consultation.',
 };
 
 const tips = [
@@ -96,7 +96,7 @@ export default function ContactPage() {
                       Need help measuring? Call our technical team for a quick walkthrough over the phone.
                     </p>
                     <a
-                      href="tel:+18005550199"
+                      href="tel:+16046185783"
                       className="mt-3 inline-flex items-center gap-2 font-body text-sm font-medium text-on-primary underline"
                     >
                       <Phone className="h-3.5 w-3.5" />
