@@ -7,12 +7,12 @@ export const mainNavItems: NavItem[] = [
     label: 'Services',
     href: '/services',
     children: [
-      { label: 'Cedar Fencing', href: '/services/cedar' },
-      { label: 'Vinyl Fencing', href: '/services' },
-      { label: 'Metal & Wood Hybrid', href: '/services' },
-      { label: 'Aluminum Fencing', href: '/services' },
-      { label: 'Chain Link', href: '/services' },
-      { label: 'Custom Gates', href: '/services' },
+      { label: 'Cedar Fencing', href: '/services/cedar-fencing' },
+      { label: 'Vinyl Fences', href: '/services/vinyl-fences' },
+      { label: 'Corrugated Metal with Wood Frame', href: '/services/corrugated-metal-wood-frame' },
+      { label: 'Metal Fences', href: '/services/metal-fences' },
+      { label: 'Chain Link Fences', href: '/services/chain-link-fences' },
+      { label: 'Aluminum Fences', href: '/services/aluminum-fences' },
     ],
   },
   { label: 'Service Areas', href: '/service-areas' },
@@ -28,10 +28,10 @@ export const footerQuickLinks: NavItem[] = [
 ];
 
 export const footerServiceLinks: NavItem[] = [
-  { label: 'Residential Fencing', href: '/services' },
-  { label: 'Commercial Security', href: '/services' },
-  { label: 'Custom Woodwork', href: '/services/cedar-fencing' },
-  { label: 'Fence Repairs', href: '/contact' },
+  { label: 'Cedar Fencing', href: '/services/cedar-fencing' },
+  { label: 'Vinyl Fences', href: '/services/vinyl-fences' },
+  { label: 'Metal Fences', href: '/services/metal-fences' },
+  { label: 'Chain Link Fences', href: '/services/chain-link-fences' },
 ];
 
 export const footerLegalLinks: NavItem[] = [

@@ -1,17 +1,17 @@
 import type { SiteConfig } from '@hv/types';
 
 export const siteConfig: SiteConfig = {
-  name: 'H&V Enterprise Ltd',
+  name: 'All Fences',
   description:
-    'Expert fencing installation in cedar, vinyl, aluminum, chain link, and more. Serving homeowners and businesses across Canada with warranties and craftsmanship you can actually feel.',
-  url: 'https://hv-enterprise.ca',
-  phone: '+1 (800) 555-0199',
-  email: 'hello@hv-enterprise.ca',
+    'Expert fencing installation in cedar, vinyl, aluminum, chain link, and more. Serving homeowners and businesses across the Okanagan, Kamloops, and Lower Mainland with warranties and craftsmanship you can actually feel.',
+  url: 'https://www.allfences.ca',
+  phone: '+1 (604) 618-5783',
+  email: 'hventerprisesltd9@gmail.com',
   address: {
-    street: '1234 Timber Lane',
-    city: 'Toronto',
-    province: 'ON',
-    postalCode: 'M5V 2L1',
+    street: '',
+    city: 'Kelowna',
+    province: 'BC',
+    postalCode: '',
     country: 'Canada',
   },
   socialLinks: {
@@ -21,7 +21,7 @@ export const siteConfig: SiteConfig = {
   },
   hours: {
     weekday: 'Mon - Fri: 8:00 AM - 6:00 PM',
-    saturday: 'Sat: By Appointment Only',
+    saturday: 'Sat: 9:00 AM - 3:00 PM',
     sunday: 'Sun: Closed',
   },
 };
