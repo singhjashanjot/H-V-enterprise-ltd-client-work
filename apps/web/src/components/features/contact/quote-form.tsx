@@ -155,13 +155,15 @@ export function QuoteForm() {
             className="h-12 w-full rounded-none border-0 border-b-2 border-outline-variant/40 bg-surface-container-lowest px-0 pb-2 pt-2 font-body text-base text-on-surface outline-none transition-colors focus:border-primary"
           >
             <option value="">Select fence type</option>
-            <option value="cedar">Cedar</option>
-            <option value="vinyl">Vinyl</option>
-            <option value="aluminum">Aluminum</option>
-            <option value="chain-link">Chain Link</option>
-            <option value="metal-wood">Metal & Wood</option>
-            <option value="composite">Composite</option>
-            <option value="ornamental">Ornamental</option>
+            <option value="cedar-fencing">Cedar Fencing</option>
+            <option value="vinyl-fences">Vinyl Fences</option>
+            <option value="corrugated-metal-wood-frame">Corrugated Metal with Wood Frame</option>
+            <option value="corrugated-metal">Corrugated Metal</option>
+            <option value="metal-fences">Metal Fences</option>
+            <option value="chain-link-fences">Chain Link Fences</option>
+            <option value="aluminum-fences">Aluminum Fences</option>
+            <option value="composite-fence">Composite Fence</option>
+            <option value="custom-cedar-fences">Custom Cedar Fences</option>
             <option value="other">Other / Not Sure</option>
           </select>
           {errors.fenceType && (

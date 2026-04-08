@@ -27,7 +27,7 @@ export default function ServiceAreasPage() {
               <AnimateOnScroll>
                 <Badge variant="durability" className="mb-6">Where We Work</Badge>
                 <h1 className="max-w-3xl font-display text-headline-lg text-on-surface">
-                  Fencing Services Across Canada.
+                  Fencing Services Across British Columbia.
                 </h1>
                 <p className="mt-6 font-body text-body-lg text-on-surface-variant">
                   We install and repair fences across our service regions — residential and commercial. Can&apos;t see your city? Contact us, we may still cover it.
@@ -46,7 +46,7 @@ export default function ServiceAreasPage() {
                 <div className="relative h-[400px] overflow-hidden rounded-2xl border border-outline-variant/30 bg-[#EAE6E0] shadow-inner md:h-[500px]">
                   <Image
                     src="/images/service-area-map.png"
-                    alt="Service area map of Canada"
+                    alt="Service area map of British Columbia"
                     fill
                     className="object-cover opacity-50 mix-blend-multiply grayscale"
                   />
