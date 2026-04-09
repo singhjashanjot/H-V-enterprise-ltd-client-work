@@ -28,13 +28,13 @@ export function CtaBanner() {
                   <ArrowRight className="h-4 w-4" />
                 </Button>
               </Link>
-              <a href="tel:+18005550199">
+              <a href="tel:+16046185783">
                 <Button
                   variant="ghost"
                   size="lg"
                   className="text-on-primary/80 hover:bg-on-primary/10 hover:text-on-primary"
                 >
-                  Call (800) 555-0199
+                  Call (604) 618-5783
                 </Button>
               </a>
             </div>
