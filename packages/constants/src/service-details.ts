@@ -19,8 +19,8 @@ export type ServiceDetail = {
 };
 
 export const serviceDetailsRecord: Record<string, ServiceDetail> = {
-  cedar: {
-    id: 'cedar',
+  'cedar-fencing': {
+    id: 'cedar-fencing',
     hero: {
       badge: 'Cedar Fencing',
       title: 'Premium Western Red Cedar.',
@@ -28,7 +28,7 @@ export const serviceDetailsRecord: Record<string, ServiceDetail> = {
       image: { src: '/images/cedar/hero-1.jpg', alt: 'Premium Cedar Fence' },
     },
     galleryTitle: 'See It Installed.',
-    galleryDescription: 'Real projects across British Columbia and Ontario.',
+    galleryDescription: 'Real projects across the Okanagan and Lower Mainland.',
     galleryImages: [
       { src: '/images/cedar/hero-1.jpg', alt: 'Modern Horizontal Privacy fence', label: 'Modern Horizontal Privacy' },
       { src: '/images/cedar/hero-2.jpg', alt: 'Custom Estate Entry gate', label: 'Custom Estate Entry' },
@@ -91,10 +91,10 @@ export const serviceDetailsRecord: Record<string, ServiceDetail> = {
       },
     ],
   },
-  vinyl: {
-    id: 'vinyl',
+  'vinyl-fences': {
+    id: 'vinyl-fences',
     hero: {
-      badge: 'Vinyl Fencing',
+      badge: 'Vinyl Fences',
       title: 'Low-Maintenance Vinyl.',
       description: 'The ultimate “set it and forget it” solution for privacy and style. Our premium vinyl fences offer the look of painted wood without the hassle of staining, sealing, or painting.',
       image: { src: '/images/vinyl/hero-1.jpg', alt: 'Premium Vinyl Fence' },
@@ -163,11 +163,11 @@ export const serviceDetailsRecord: Record<string, ServiceDetail> = {
       },
     ],
   },
-  'metal-wood': {
-    id: 'metal-wood',
+  'corrugated-metal-wood-frame': {
+    id: 'corrugated-metal-wood-frame',
     hero: {
-      badge: 'Hybrid Fencing',
-      title: 'Metal & Wood Fencing.',
+      badge: 'Corrugated Metal with Wood Frame',
+      title: 'Corrugated Metal with Wood Frame.',
       description: 'A striking fusion of industrial steel posts and warm, organic cedar or composite panels. The absolute pinnacle of modern architectural design.',
       image: { src: '/images/metal-wood/hero-1.jpg', alt: 'Premium Hybrid Fence' },
     },
@@ -230,11 +230,11 @@ export const serviceDetailsRecord: Record<string, ServiceDetail> = {
       },
     ],
   },
-  'full-metal': {
-    id: 'full-metal',
+  'corrugated-metal': {
+    id: 'corrugated-metal',
     hero: {
-      badge: 'Metal Fencing',
-      title: 'Full Metal & Corrugated.',
+      badge: 'Corrugated Metal',
+      title: 'Corrugated Metal Fencing.',
       description: 'Robust, contemporary, and nearly indestructible. Our solid metal privacy barriers provide maximum security and a distinct industrial aesthetic.',
       image: { src: '/images/full-metal/hero-1.jpg', alt: 'Premium Metal Fence' },
     },
@@ -302,11 +302,11 @@ export const serviceDetailsRecord: Record<string, ServiceDetail> = {
       },
     ],
   },
-  ornamental: {
-    id: 'ornamental',
+  'metal-fences': {
+    id: 'metal-fences',
     hero: {
-      badge: 'Ornamental Iron',
-      title: 'Ornamental Fencing.',
+      badge: 'Metal Fences',
+      title: 'Metal Fencing.',
       description: 'The elegant look of traditional wrought iron, upgraded with modern galvanized steel or aluminum to prevent rust and provide lasting security.',
       image: { src: '/images/ornamental/hero-1.jpg', alt: 'Premium Ornamental Fence' },
     },
@@ -369,10 +369,10 @@ export const serviceDetailsRecord: Record<string, ServiceDetail> = {
       },
     ],
   },
-  'chain-link': {
-    id: 'chain-link',
+  'chain-link-fences': {
+    id: 'chain-link-fences',
     hero: {
-      badge: 'Chain Link',
+      badge: 'Chain Link Fences',
       title: 'Durable Chain Link.',
       description: 'Cost-effective, reliable, and versatile. Whether for a backyard dog run, a commercial perimeter, or a sporting facility, chain link gets the job done.',
       image: { src: '/images/chain-link/hero-1.jpg', alt: 'Premium Chain Link Fence' },
@@ -436,10 +436,10 @@ export const serviceDetailsRecord: Record<string, ServiceDetail> = {
       },
     ],
   },
-  aluminum: {
-    id: 'aluminum',
+  'aluminum-fences': {
+    id: 'aluminum-fences',
     hero: {
-      badge: 'Aluminum Fencing',
+      badge: 'Aluminum Fences',
       title: 'Premium Aluminum.',
       description: 'The ultimate rust-proof metal fence. Lightweight, incredibly strong, and finished with architectural-grade powder coating for lifetime durability.',
       image: { src: '/images/aluminum/hero-1.jpg', alt: 'Premium Aluminum Fence' },
@@ -503,10 +503,10 @@ export const serviceDetailsRecord: Record<string, ServiceDetail> = {
       },
     ],
   },
-  composite: {
-    id: 'composite',
+  'composite-fence': {
+    id: 'composite-fence',
     hero: {
-      badge: 'Composite Fencing',
+      badge: 'Composite Fence',
       title: 'Eco-Friendly Composite.',
       description: 'Engineered from recycled wood fibers and plastics, composite fencing delivers the warm texture of natural wood with the maintenance-free lifestyle of vinyl.',
       image: { src: '/images/composite/hero-1.jpg', alt: 'Premium Composite Fence' },
@@ -570,10 +570,10 @@ export const serviceDetailsRecord: Record<string, ServiceDetail> = {
       },
     ],
   },
-  'custom-cedar': {
-    id: 'custom-cedar',
+  'custom-cedar-fences': {
+    id: 'custom-cedar-fences',
     hero: {
-      badge: 'Bespoke Carpentry',
+      badge: 'Custom Cedar Fences',
       title: 'Custom Cedar Creations.',
       description: 'For unique architectural challenges. We design and build one-of-a-kind timber structures, from intricate pergolas to multi-tiered slatted privacy screens.',
       image: { src: '/images/custom-cedar/hero-1.jpg', alt: 'Premium Custom Cedar' },
