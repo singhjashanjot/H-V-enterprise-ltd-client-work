@@ -44,8 +44,8 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
-        source: '/services/cedar-fencing',
-        destination: '/services/cedar',
+        source: '/services/cedar',
+        destination: '/services/cedar-fencing',
         permanent: true,
       },
     ];
