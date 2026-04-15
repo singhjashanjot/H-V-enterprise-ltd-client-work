@@ -37,7 +37,7 @@ export function HomeHero() {
 
             <AnimateOnScroll delay={0.2}>
               <p className="mt-6 max-w-xl font-body text-body-lg text-on-surface-variant">
-                Serving homeowners and businesses across Canada — with warranties and craftsmanship you can actually feel.
+                Serving homeowners and businesses across British Columbia — with warranties and craftsmanship you can actually feel.
               </p>
             </AnimateOnScroll>
 
@@ -64,7 +64,7 @@ export function HomeHero() {
               <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-surface-container">
                 <Image
                   src="/images/hero-fence.jpg"
-                  alt="Premium cedar fence installation by H&V Enterprise in a Canadian backyard"
+                  alt="Premium cedar fence installation by All Fences in a Canadian backyard"
                   fill
                   className="object-cover"
                   priority
