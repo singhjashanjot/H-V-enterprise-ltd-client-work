@@ -23,7 +23,7 @@ export function TrustSection() {
               Built Different. Built to Last.
             </h2>
             <p className="mx-auto mt-4 max-w-2xl font-body text-body-lg text-surface/70">
-              Projects completed across Canada with 100% satisfaction rating.
+              Projects completed across British Columbia with 100% satisfaction rating.
             </p>
           </div>
         </AnimateOnScroll>

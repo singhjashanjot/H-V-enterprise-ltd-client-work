@@ -7,38 +7,37 @@ import { Badge } from '@hv/ui';
 import { AnimateOnScroll } from '@/components/common/animate-on-scroll';
 
 const regionData = {
-  'Eastern Canada': [
-    'Toronto',
-    'Ottawa',
-    'Mississauga',
-    'Vaughan',
-    'Markham',
-    'Oshawa',
-    'Hamilton',
-    'Brampton',
-    'Richmond Hill',
-    'Oakville',
-    'Burlington',
-    'Barrie',
+  'Okanagan / Kamloops': [
+    'Kelowna',
+    'West Kelowna',
+    'Lake Country',
+    'Vernon',
+    'Salmon Arm',
+    'Peachland',
+    'Summerland',
+    'Penticton',
+    'Oliver',
+    'Osoyoos',
+    'Kamloops',
   ],
-  'Western Canada': [
+  'Lower Mainland': [
     'Vancouver',
     'Surrey',
     'Burnaby',
     'Richmond',
     'Langley',
     'Coquitlam',
-    'Calgary',
-    'Edmonton',
-    'Kelowna',
-    'Victoria',
+    'Delta',
+    'New Westminster',
+    'Maple Ridge',
+    'Abbotsford',
   ],
 };
 
 type RegionKey = keyof typeof regionData;
 
 export function ServiceAreasPreview() {
-  const [activeRegion, setActiveRegion] = useState<RegionKey>('Eastern Canada');
+  const [activeRegion, setActiveRegion] = useState<RegionKey>('Okanagan / Kamloops');
 
   const cities = regionData[activeRegion];
   const totalCities = Object.values(regionData).reduce((sum, arr) => sum + arr.length, 0);
@@ -58,7 +57,7 @@ export function ServiceAreasPreview() {
             </h2>
 
             <p className="mt-1 max-w-lg font-body text-body-lg text-on-surface-variant">
-              From coast to coast, we bring our specialized fencing expertise to neighborhoods near you.
+              From the Okanagan to the Lower Mainland, we bring our specialized fencing expertise to neighborhoods near you.
             </p>
 
             {/* Region Tabs */}
@@ -116,7 +115,7 @@ export function ServiceAreasPreview() {
             <div className="relative h-[400px] overflow-hidden rounded-2xl border border-outline-variant/30 bg-[#EAE6E0] shadow-inner md:h-[500px]">
               <Image
                 src="/images/service-area-map.png"
-                alt="Service area map of Canada"
+                alt="Service area map of British Columbia"
                 fill
                 className="object-cover opacity-50 grayscale mix-blend-multiply"
               />
