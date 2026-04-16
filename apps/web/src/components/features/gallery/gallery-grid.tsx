@@ -1,8 +1,8 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import Image from 'next/image';
-import { X, MapPin } from 'lucide-react';
+import { X, MapPin, Play } from 'lucide-react';
 import { galleryProjects } from '@hv/constants';
 import { cn } from '@hv/utils';
 import { StaggerContainer, StaggerItem } from '@/components/common/animate-on-scroll';
@@ -12,6 +12,7 @@ const categories = ['All', ...new Set(galleryProjects.map((p) => p.category))];
 export function GalleryGrid() {
   const [activeFilter, setActiveFilter] = useState('All');
   const [lightbox, setLightbox] = useState<string | null>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
 
   const closeLightbox = useCallback(() => setLightbox(null), []);
 
@@ -67,14 +68,32 @@ export function GalleryGrid() {
                 className="group relative block w-full overflow-hidden rounded-xl text-left"
               >
                 <div className="relative aspect-[4/3] bg-surface-container">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
+                  {project.video ? (
+                    /* Video thumbnail — shows first frame via preload="metadata" */
+                    <video
+                      src={project.video}
+                      preload="metadata"
+                      muted
+                      playsInline
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  ) : (
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-on-background/70 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  {project.video && (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-full bg-surface/80 shadow-lg backdrop-blur-sm transition-transform duration-300 group-hover:scale-110">
+                        <Play className="h-6 w-6 translate-x-0.5 text-on-surface" />
+                      </div>
+                    </div>
+                  )}
                   <div className="absolute inset-x-0 bottom-0 translate-y-2 p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                     <p className="font-display text-sm font-semibold text-surface">
                       {project.title}
@@ -115,15 +134,26 @@ export function GalleryGrid() {
                 className="relative max-h-[85vh] max-w-5xl overflow-hidden rounded-2xl"
                 onClick={(e) => e.stopPropagation()}
               >
-                <div className="relative aspect-[16/10]">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover"
-                    sizes="90vw"
+                {project.video ? (
+                  <video
+                    ref={videoRef}
+                    src={project.video}
+                    controls
+                    autoPlay
+                    playsInline
+                    className="max-h-[75vh] w-full rounded-t-2xl object-contain"
                   />
-                </div>
+                ) : (
+                  <div className="relative aspect-[16/10]">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover"
+                      sizes="90vw"
+                    />
+                  </div>
+                )}
                 <div className="bg-on-background p-4">
                   <p className="font-display text-base font-semibold text-surface">{project.title}</p>
                   {project.location && (
