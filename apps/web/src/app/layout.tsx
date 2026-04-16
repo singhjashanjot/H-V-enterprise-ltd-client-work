@@ -73,7 +73,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${bricolage.variable} ${dmSans.variable}`} suppressHydrationWarning>
-        <body className="min-h-screen bg-background font-body text-on-surface antialiased">
+        <body className="min-h-screen bg-background font-body text-on-surface antialiased" suppressHydrationWarning>
         {children}
       </body>
     </html>
