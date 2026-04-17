@@ -63,8 +63,8 @@ export function HomeHero() {
             <AnimateOnScroll delay={0.2}>
               <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-surface-container">
                 <Image
-                  src="/images/hero-fence.jpg"
-                  alt="Premium cedar fence installation by All Fences in a Canadian backyard"
+                  src="/images/gallery/Image1.jpeg"
+                  alt="Premium cedar fence installation by H&V Enterprise in a Canadian backyard"
                   fill
                   className="object-cover"
                   priority
