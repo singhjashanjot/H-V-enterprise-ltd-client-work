@@ -26,6 +26,7 @@ export interface GalleryProject {
   title: string;
   category: string;
   image: string;
+  video?: string;
   location?: string;
   description?: string;
 }
