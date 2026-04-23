@@ -15,7 +15,7 @@ export function Footer() {
                 <span className="font-display text-lg font-bold text-primary">AF</span>
               </div>
               <span className="font-display text-base font-semibold tracking-tight text-surface">
-                All Fences
+                HV ENTERPRISE LTD
               </span>
             </div>
             <p className="mt-4 font-body text-sm leading-relaxed text-surface-dim">
@@ -137,7 +137,7 @@ export function Footer() {
       <div className="border-t border-surface/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-5 py-6 md:flex-row md:px-8 lg:px-12">
           <p className="font-body text-xs text-surface/50">
-            © {new Date().getFullYear()} All Fences. All rights reserved.
+            © {new Date().getFullYear()} HV ENTERPRISE LTD. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             {footerLegalLinks

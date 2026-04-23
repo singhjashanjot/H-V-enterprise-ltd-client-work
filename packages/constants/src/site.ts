@@ -1,7 +1,7 @@
 import type { SiteConfig } from '@hv/types';
 
 export const siteConfig: SiteConfig = {
-  name: 'All Fences',
+  name: 'HV ENTERPRISE LTD',
   description:
     'Expert fencing installation in cedar, vinyl, aluminum, chain link, and more. Serving homeowners and businesses across the Okanagan, Kamloops, and Lower Mainland with warranties and craftsmanship you can actually feel.',
   url: 'https://www.allfences.ca',

@@ -18,8 +18,8 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: 'All Fences | Professional Fencing in BC',
-    template: '%s | All Fences',
+    default: 'HV ENTERPRISE LTD | Professional Fencing in BC',
+    template: '%s | HV ENTERPRISE LTD',
   },
   description:
     'Expert fencing installation in cedar, vinyl, aluminum, chain link, and more. Serving homeowners and businesses across the Okanagan, Kamloops, and Lower Mainland with warranties and craftsmanship you can actually feel.',
@@ -34,23 +34,23 @@ export const metadata: Metadata = {
     'fence installation',
     'Kelowna fencing',
     'fence contractor',
-    'All Fences',
+    'HV ENTERPRISE LTD',
   ],
-  authors: [{ name: 'All Fences' }],
-  creator: 'All Fences',
+  authors: [{ name: 'HV ENTERPRISE LTD' }],
+  creator: 'HV ENTERPRISE LTD',
   metadataBase: new URL('https://www.allfences.ca'),
   openGraph: {
     type: 'website',
     locale: 'en_CA',
     url: 'https://www.allfences.ca',
-    siteName: 'All Fences',
-    title: 'All Fences | Professional Fencing in BC',
+    siteName: 'HV ENTERPRISE LTD',
+    title: 'HV ENTERPRISE LTD | Professional Fencing in BC',
     description:
       'Expert fencing installation in cedar, vinyl, aluminum, chain link, and more. Serving homeowners and businesses across British Columbia.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'All Fences | Professional Fencing in BC',
+    title: 'HV ENTERPRISE LTD | Professional Fencing in BC',
     description:
       'Expert fencing installation across British Columbia with warranties and craftsmanship you can actually feel.',
   },

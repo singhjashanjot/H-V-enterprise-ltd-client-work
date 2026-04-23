@@ -8,7 +8,7 @@ import { AnimateOnScroll } from '@/components/common/animate-on-scroll';
 
 export const metadata: Metadata = {
   title: 'Contact & Free Quote',
-  description: 'Get a free fencing quote from All Fences. Contact our experts for professional consultation.',
+  description: 'Get a free fencing quote from HV ENTERPRISE LTD. Contact our experts for professional consultation.',
 };
 
 const tips = [

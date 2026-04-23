@@ -31,7 +31,7 @@ export function Header() {
           </div>
           <div className="hidden sm:block">
             <span className="font-display text-base font-semibold tracking-tight text-on-surface">
-              All Fences
+              HV ENTERPRISE LTD
             </span>
             <span className="block font-body text-[10px] uppercase tracking-[0.08em] text-on-surface-variant">
               Quality Fencing
