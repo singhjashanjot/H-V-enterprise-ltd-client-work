@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Button, Input } from '@hv/ui';
 import { Send, CheckCircle, AlertCircle } from 'lucide-react';
-import { sendQuoteEmail } from '@/app/actions/contact';
+import { getWeb3FormsKey } from '@/app/actions/contact';
 
 const MAX_FIELD_LENGTH = 200;
 const MAX_MESSAGE_LENGTH = 2000;
@@ -25,7 +25,7 @@ interface FormValues {
 
 export function QuoteForm() {
   const [submitted, setSubmitted] = useState(false);
-  const [submitError, setSubmitError] = useState(false);
+  const [submitError, setSubmitError] = useState<string | false>(false);
   const {
     register,
     handleSubmit,
@@ -36,16 +36,32 @@ export function QuoteForm() {
   const onSubmit = async (data: FormValues) => {
     setSubmitError(false);
     try {
-      const result = await sendQuoteEmail(data);
+      const access_key = await getWeb3FormsKey();
+      
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key,
+          subject: `New Quote Request from ${data.firstName} ${data.lastName}`,
+          from_name: 'HV Enterprise Ltd Website',
+          ...data,
+        }),
+      });
 
-      if (!result.success) {
-        throw new Error(result.error || 'Form submission failed');
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || 'Form submission failed');
       }
 
       setSubmitted(true);
       reset();
-    } catch {
-      setSubmitError(true);
+    } catch (e: any) {
+      setSubmitError(e.message || 'Something went wrong. Please try again or call us directly.');
     }
   };
 
@@ -75,7 +91,7 @@ export function QuoteForm() {
         <div className="flex items-center gap-3 rounded-lg bg-error/10 p-4">
           <AlertCircle className="h-5 w-5 shrink-0 text-error" />
           <p className="font-body text-sm text-error">
-            Something went wrong. Please try again or call us directly.
+            {submitError}
           </p>
         </div>
       )}
