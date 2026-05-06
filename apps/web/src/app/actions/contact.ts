@@ -2,23 +2,23 @@
 
 export async function sendQuoteEmail(data: any) {
   try {
-    const response = await fetch('https://formsubmit.co/ajax/hventerprisesltd9@gmail.com', {
+    const response = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
       },
       body: JSON.stringify({
+        access_key: process.env.WEB3FORMS_ACCESS_KEY,
+        subject: `New Quote Request from ${data.firstName} ${data.lastName}`,
+        from_name: 'HV Enterprise Ltd Website',
         ...data,
-        _subject: `New Quote Request from ${data.firstName} ${data.lastName}`,
-        _template: 'table',
-        _captcha: 'false',
       }),
     });
 
     const result = await response.json();
     
-    if (response.ok && (result.success === 'true' || result.success === true)) {
+    if (response.ok && result.success) {
       return { success: true };
     }
     
