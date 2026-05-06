@@ -27,7 +27,7 @@ export function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-primary-container">
-            <span className="font-display text-lg font-bold text-on-primary">AF</span>
+            <span className="font-display text-lg font-bold text-on-primary">HV</span>
           </div>
           <div className="hidden sm:block">
             <span className="font-display text-base font-semibold tracking-tight text-on-surface">

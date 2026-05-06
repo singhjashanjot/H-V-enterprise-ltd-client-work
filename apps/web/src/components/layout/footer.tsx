@@ -12,7 +12,7 @@ export function Footer() {
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2">
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-primary-fixed-dim to-primary-fixed">
-                <span className="font-display text-lg font-bold text-primary">AF</span>
+                <span className="font-display text-lg font-bold text-primary">HV</span>
               </div>
               <span className="font-display text-base font-semibold tracking-tight text-surface">
                 HV ENTERPRISE LTD
