@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Button, Input } from '@hv/ui';
 import { Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { sendQuoteEmail } from '@/app/actions/contact';
 
 const MAX_FIELD_LENGTH = 200;
 const MAX_MESSAGE_LENGTH = 2000;
@@ -32,11 +33,15 @@ export function QuoteForm() {
     reset,
   } = useForm<FormValues>();
 
-  const onSubmit = async (_data: FormValues) => {
+  const onSubmit = async (data: FormValues) => {
     setSubmitError(false);
     try {
-      // Simulate API call — replace with actual endpoint
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      const result = await sendQuoteEmail(data);
+
+      if (!result.success) {
+        throw new Error(result.error || 'Form submission failed');
+      }
+
       setSubmitted(true);
       reset();
     } catch {
